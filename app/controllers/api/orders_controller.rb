@@ -11,10 +11,10 @@ module Api
       if order.save && params[:basketItems].count > 0
         params[:basketItems].each do |item|
           OrderProduct.create(
-            product: Product.find(item[:product_id]),
+            product: Product.find(item[:productId]),
             order: order,
             count: item[:count],
-            price_per_product: item[:price_per_product]
+            price_per_product: item[:pricePerProduct]
           )
         end
 
